@@ -1,13 +1,17 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="UTF-8" />
-  <!-- Security headers -->
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Security headers -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; 
-              script-src 'self' https://cdn.jsdelivr.net https://www.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; 
+              script-src 'self' https://cdn.jsdelivr.net https://www.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com;
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
               font-src 'self' https://fonts.gstatic.com;
+              img-src 'self' data: blob: https://images.unsplash.com https://*.unsplash.com;
+              media-src 'self' https://images.unsplash.com;
               object-src 'none';"
     />
 
@@ -15,44 +19,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#ffffff" />
     <!-- meta name="robots" content="index, follow, max-image-preview:small, max-snippet:-1, max-video-preview:-1" -->
-    <meta
-      name="description"
-      content="justbeena"
-    />
-    <!-- Open Graph for social media -->
-    <meta property="og:title" content="justbeena" />
-    <!-- meta property="og:image" content="" / -->
-    <meta
-      name="og:description"
-      content="justbeena"
-    />
+    <meta name="description" content="just Beena" />
+
     <meta name="og:url" content="https://www.justbeena.de" />
     <meta name="og:type" content="website" />
 
     <!-- preload fonts or assets for performance improvement -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <!-- Actual fonts
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Parisienne&family=Comme:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comme:wght@100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Parisienne&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Parisienne&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Schema.org structured data for SEO -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="favicon.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>Welcome</title>
-  
+    <title>just Beena!</title>
+    <script type="module" crossorigin src="/assets/index-Dq01fDWb.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-De555Quz.css">
   </head>
   <body>
     <div id="root"></div>
-
   </body>
 </html>
