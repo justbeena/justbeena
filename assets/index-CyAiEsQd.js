@@ -123,7 +123,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                       translate(-50%, -50%)
                       rotate(${o}deg)
                       translateY(calc(${-n.radius}vmin * var(--scale, 1)))
-                    `},children:c},a)})},r))})]})}function lp(){let e={x:45,y:50};return(0,B.jsxs)(`div`,{className:`pointer-events-none absolute inset-0 overflow-hidden`,children:[(0,B.jsx)(`style`,{children:`
+                    `},children:c},a)})},r))})]})}function lp(){let e={x:45,y:50};return(0,B.jsxs)(`div`,{className:`pointer-events-none absolute inset-0 overflow-hidden`,"aria-hidden":`true`,children:[(0,B.jsx)(`style`,{children:`
         @keyframes abyssalRipple {
           0%   { transform: translate(-50%, -50%) scale(0.08); opacity: 0; }
           8%   { opacity: 0.9; }
@@ -133,17 +133,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         .abyss-ripple {
           position: absolute;
           border-radius: 9999px;
-          border: 1px solid rgba(120, 190, 210, 0.2); 
+          border: 1px solid rgba(120, 190, 210, 0.2);
           box-shadow:
             0 0 20px 2px rgba(80, 160, 190, 0.15),
             inset 0 0 28px 3px rgba(60, 130, 160, 0.1);
           transform-origin: center center;
           animation: abyssalRipple var(--dur) ease-out infinite;
           animation-delay: var(--delay);
-          will-change: transform, opacity;
-        }  
-        @media (max-width: 767px) {
-          .abyss-ripple { --ripple-scale: 2.2; }
+          /* No will-change: too many layers x too much area on mobile */
         }
         .abyss-ripple.bright {
           border-color: rgba(180, 230, 240, 0.4);
@@ -151,7 +148,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             0 0 30px 3px rgba(120, 200, 220, 0.4),
             inset 0 0 38px 4px rgba(80, 160, 190, 0.18);
         }
-      `}),(0,B.jsx)(`div`,{className:`absolute inset-0 bg-[#04141a]/30`}),(0,B.jsx)(`div`,{className:`absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,transparent_20%,rgba(0,8,12,0.55)_100%)]`}),[{delay:0,duration:13,bright:!1},{delay:2,duration:13,bright:!1},{delay:4,duration:13,bright:!0},{delay:6,duration:13,bright:!1},{delay:8,duration:13,bright:!1},{delay:10,duration:13,bright:!1},{delay:12,duration:13,bright:!0},{delay:14,duration:13,bright:!1},{delay:16,duration:13,bright:!1}].map((t,n)=>(0,B.jsx)(`span`,{className:`abyss-ripple${t.bright?` bright`:``}`,style:{top:`${e.y}%`,left:`${e.x}%`,width:`calc(120vmax * var(--ripple-scale, 1))`,height:`calc(120vmax * var(--ripple-scale, 1))`,"--dur":`${t.duration}s`,"--delay":`${t.delay}s`}},n))]})}function up(){let e=(0,b.useMemo)(()=>{let e=[[`#00e5ff`,`#00b3ff`,`#0066ff`],[`#a855f7`,`#7c3aed`,`#4c1d95`],[`#22d3ee`,`#06b6d4`,`#0e7490`],[`#f472b6`,`#ec4899`,`#9d174d`],[`#34d399`,`#10b981`,`#065f46`],[`#fbbf24`,`#f59e0b`,`#b45309`],[`#60a5fa`,`#3b82f6`,`#1e3a8a`]],t=(e,t)=>Math.random()*(t-e)+e,n=(e,n)=>Math.floor(t(e,n+1));return Array.from({length:7}).map((r,i)=>{let a=e[i%e.length],o=n(90,220),s=Math.round(o*.55),c=n(0,359),l=t(2.5,5).toFixed(2),u=t(0,3).toFixed(2),d=t(2,4.5).toFixed(2);return{id:i,top:`${t(5,95).toFixed(2)}%`,left:`${t(2,98).toFixed(2)}%`,size:o,width:s,rotation:c,palette:a,pulseDur:l,pulseDelay:u,strokeW:d}})},[]);return(0,B.jsxs)(`div`,{className:`pointer-events-none absolute inset-0 overflow-hidden`,children:[(0,B.jsx)(`style`,{children:`
+        /* Mobile: vmax already equals viewport height (tall), so
+           a size of ~100vmax fully covers the card without going
+           to multi-thousand-percent of the screen. */
+        .abyss-ripple { --size: 120vmax; }
+        @media (max-width: 767px) {
+          .abyss-ripple { --size: 100vmax; }
+        }
+      `}),(0,B.jsx)(`div`,{className:`absolute inset-0 bg-[#04141a]/30`}),(0,B.jsx)(`div`,{className:`absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,transparent_20%,rgba(0,8,12,0.55)_100%)]`}),[{delay:0,duration:13,bright:!1},{delay:2,duration:13,bright:!1},{delay:4,duration:13,bright:!0},{delay:6,duration:13,bright:!1},{delay:8,duration:13,bright:!1},{delay:10,duration:13,bright:!1},{delay:12,duration:13,bright:!0},{delay:14,duration:13,bright:!1},{delay:16,duration:13,bright:!1}].map((t,n)=>(0,B.jsx)(`span`,{className:`abyss-ripple${t.bright?` bright`:``}`,style:{top:`${e.y}%`,left:`${e.x}%`,width:`var(--size)`,height:`var(--size)`,"--dur":`${t.duration}s`,"--delay":`${t.delay}s`}},n))]})}function up(){let e=(0,b.useMemo)(()=>{let e=[[`#00e5ff`,`#00b3ff`,`#0066ff`],[`#a855f7`,`#7c3aed`,`#4c1d95`],[`#22d3ee`,`#06b6d4`,`#0e7490`],[`#f472b6`,`#ec4899`,`#9d174d`],[`#34d399`,`#10b981`,`#065f46`],[`#fbbf24`,`#f59e0b`,`#b45309`],[`#60a5fa`,`#3b82f6`,`#1e3a8a`]],t=(e,t)=>Math.random()*(t-e)+e,n=(e,n)=>Math.floor(t(e,n+1));return Array.from({length:7}).map((r,i)=>{let a=e[i%e.length],o=n(90,220),s=Math.round(o*.55),c=n(0,359),l=t(2.5,5).toFixed(2),u=t(0,3).toFixed(2),d=t(2,4.5).toFixed(2);return{id:i,top:`${t(5,95).toFixed(2)}%`,left:`${t(2,98).toFixed(2)}%`,size:o,width:s,rotation:c,palette:a,pulseDur:l,pulseDelay:u,strokeW:d}})},[]);return(0,B.jsxs)(`div`,{className:`pointer-events-none absolute inset-0 overflow-hidden`,children:[(0,B.jsx)(`style`,{children:`
         @keyframes particleRush {
           from {
             opacity: 0;
