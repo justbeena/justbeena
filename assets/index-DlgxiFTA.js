@@ -130,7 +130,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           40%  { opacity: 0.55; }
           100% { transform: translate(-50%, -50%) scale(1);    opacity: 0; }
         }
-        .abyss-ripple { --ripple-scale: 1.6; }
+        .abyss-ripple {
+          position: absolute;
+          border-radius: 9999px;
+          border: 1px solid rgba(120, 190, 210, 0.2); 
+          box-shadow:
+            0 0 20px 2px rgba(80, 160, 190, 0.15),
+            inset 0 0 28px 3px rgba(60, 130, 160, 0.1);
+          transform-origin: center center;
+          animation: abyssalRipple var(--dur) ease-out infinite;
+          animation-delay: var(--delay);
+          will-change: transform, opacity;
+        }  
         @media (max-width: 767px) {
           .abyss-ripple { --ripple-scale: 2.2; }
         }
